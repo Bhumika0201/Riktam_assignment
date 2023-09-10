@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "9c2d127a-7c02-4d9c-80ba-057882124c5d",
+		"name": "riktam_assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "registerUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"testUser\",\n\"email\": \"testUser@gmail.com\",\n\"password\":\"TestUser1@\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5200/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5200",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\": \"testAdmin@gmail.com\",\n\"password\":\"TestAdmin1@\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{globalRiktam}}/api/v1/auth/login",
+					"host": [
+						"{{globalRiktam}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGZkNDU2YWQxYzZjMTkwNDdiMzc4YTQiLCJuYW1lIjoidGVzdEFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjk0MzE5OTk5LCJleHAiOjE2OTQ0MDYzOTl9.m6KJDBCWM83oBPR_QkLbqOw3PVKU3Zr9opFWKH_D9MU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"testUser2\",\n\"email\": \"testUser2@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{globalRiktam}}/api/v1/users/user",
+					"host": [
+						"{{globalRiktam}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit User",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Search user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create Group",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{globalRiktam}}/api/v1/groups/user-search",
+					"host": [
+						"{{globalRiktam}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"groups",
+						"user-search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Send Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGZkNDU2YWQxYzZjMTkwNDdiMzc4YTQiLCJuYW1lIjoidGVzdEFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjk0MzI5NzQ5LCJleHAiOjE2OTQ0MTYxNDl9.RNYby3bpfEg2HDXepI7i464jnzI9Bwgv-4VhPzwxWDs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"text\":\"Sending Hi\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{globalRiktam}}/api/v1/groups/64fd8ce96b60a8a7ada2ce67/send-message",
+					"host": [
+						"{{globalRiktam}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"groups",
+						"64fd8ce96b60a8a7ada2ce67",
+						"send-message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like message",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGZkNDU2YWQxYzZjMTkwNDdiMzc4YTQiLCJuYW1lIjoidGVzdEFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjk0MzI5NzQ5LCJleHAiOjE2OTQ0MTYxNDl9.RNYby3bpfEg2HDXepI7i464jnzI9Bwgv-4VhPzwxWDs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{globalRiktam}}/api/v1/groups/64fd8ce96b60a8a7ada2ce67/64fd9cc63c1f14ace4b2bf8c/like",
+					"host": [
+						"{{globalRiktam}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"groups",
+						"64fd8ce96b60a8a7ada2ce67",
+						"64fd9cc63c1f14ace4b2bf8c",
+						"like"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "globalRiktam",
+			"value": "http://localhost:5200"
+		}
+	]
+}
