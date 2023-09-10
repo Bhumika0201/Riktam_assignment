@@ -11,7 +11,8 @@ After that run this command
 npm install && npm start
 ```
 
-PROBLEM STATEMENT
+PROBLEM STATEMENT:
+
 Technical Assignment Task:
 Build a simple application which provides web services to facilitate group chat and manage data.
 Admin APIs (only admin can add users)
